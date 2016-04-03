@@ -1,0 +1,13 @@
+{
+    "name": "angular2Test",
+    "version": "1.0.0",
+    "description": "angular2Test",
+    "main": "",
+    "dependencies": {},
+    "devDependencies": {},
+    "scripts": {
+        "install": "cd backend && npm install && cd ../frontend && npm install",
+        "start": "(cd backend && sails lift) & (cd frontend && gulp serve --env dev)",
+        "test": "cd backend && mocha"
+    }
+}
