@@ -9,7 +9,16 @@ import {HTTP_PROVIDERS} from 'angular2/http';
   providers: [DataService, HTTP_PROVIDERS]
 })
 export class HomeCmp {
+  private list;
   constructor(dataService: DataService) {
-      dataService.getPokemonList();
+      dataService.getPokemonList()
+      .subscribe(
+        response => {
+          this.list = response.json().objects;
+        },
+        error => {
+          console.log(error);
+        }
+      );;
   }
 }
